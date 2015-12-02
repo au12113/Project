@@ -21,6 +21,7 @@ namespace Project
             model.AttachObserver(this);
             controller = new THController();
             controller.AddModel(model);
+            pictureBox1.Location = pictureBox2.Location;
         }
 
         public void Notify(Model m)

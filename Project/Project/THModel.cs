@@ -39,7 +39,8 @@ namespace Project
         
         public void PerformUp()
         {
-            board[1, 0].PosPlayer = 1;
+            int x = player[0].pLocX();
+            board[x, 0].PosPlayer = 1;
             NotifyAll();
         }
     }

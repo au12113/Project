@@ -25,12 +25,29 @@ namespace Project
             get { return _status; }
             set { _status = value; }
         }
+        private int _locx;
+        public int LocX
+        {
+            get { return _locx; }
+            set { _locx = value; }
+        }
+        private int _locy;
+        public int LocY
+        {
+            get { return _locy; }
+            set { _locy = value; }
+        }
         //METHOD
         public Player(string name)
         {
             _name = name;
             HP = 3;
             Status = 0;
+        }
+        public int pLocX()
+        {
+
+            return LocX;
         }
     }
 }
