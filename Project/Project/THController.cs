@@ -12,7 +12,7 @@ namespace Project
         {
             foreach (THModel m in mList)
             {
-                switch (action)
+                /*switch (action)
                 {
                     case LEFT:
                         m.PerformLeft();
@@ -26,7 +26,7 @@ namespace Project
                     case DOWN:
                         m.PerformDown();
                         break;
-                }
+                }*/
 
             }
         }

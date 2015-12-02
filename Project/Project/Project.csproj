@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="THView.cs">
       <SubType>Form</SubType>
     </Compile>

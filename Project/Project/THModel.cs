@@ -8,17 +8,17 @@ namespace Project
 {
     class THModel : Model
     {
-        protected int boardSize; // default is 4
         protected Tile[,] board;
         protected Random rand;
 
         public THModel () 
         {
-            board[0, 0] = new Tile(0,0,0);
+            board[0, 0] = new Tile(0, 0, 0);
+            board[0, 1] = new Tile(0, 1, 0);
             NotifyAll();
         }
 
-        public int[,] GetBoard()
+        public Tile[,] GetBoard()
         {
             return board;
         }
