@@ -21,31 +21,16 @@ namespace Project
         }
         private int _status;
         public int Status
-        {
+        { 
             get { return _status; }
             set { _status = value; }
         }
-        private int _locx ;
-        public int LocX
-        {
-            get { return _locx; }
-            set { _locx = value; }
-        }
-        private int _locy;
-        public int LocY
-        {
-            get { return _locy; }
-            set { _locy = value; }
-        }
         //METHOD
-        public Player(string name,int x,int y)
+        public Player(string name)
         {
             _name = name;
             HP = 3;
             Status = 0;
-            LocX = x;
-            LocY = y;
         }
-
     }
 }

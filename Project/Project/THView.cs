@@ -28,40 +28,20 @@ namespace Project
             UpdateBoard(((THModel)m).GetBoard());
         }
 
-        private void UpdatePlayer(Label l, int i)
+        private void UpdateTile(PictureBox pb,int isHere)
         {
-            if (i != 0)
-            {
-                l.Text = Convert.ToString(i);
-            }
-            else
-            {
-                l.Text = "";
-            }
-            switch (i)
-            {
-                case 0:
-                    l.BackColor = Color.Gray;
-                    break;
-                case 2:
-                    l.BackColor = Color.DarkGray;
-                    break;
-                case 4:
-                    l.BackColor = Color.Orange;
-                    break;
-                case 8:
-                    l.BackColor = Color.Red;
-                    break;
-                default:
-                    l.BackColor = Color.Green;
-                    break;
-            }
+            if(isHere == 1)
+                pictureBox1.Location = pb.Location;
         }
         private void UpdateBoard(Tile[,] board)
         {
-            
+            UpdateTile(pictureBox2, board[1, 0].PosPlayer);
+            UpdateTile(pictureBox3, board[1, 1].PosPlayer);
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            controller.ActionPerformed(0);
+        }
     }
 }

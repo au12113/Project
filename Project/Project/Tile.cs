@@ -27,7 +27,12 @@ namespace Project
                     _item = value;
             }
         }
-
+        private int _posPlayer;
+        public int PosPlayer
+        {
+            get { return _posPlayer; }
+            set { _posPlayer = value; }
+        }
         private List<Tile> nextTile = new List<Tile>();
         //Method
         public Tile(int c, int r, int item)
