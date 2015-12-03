@@ -25,7 +25,7 @@ namespace Project
             get { return _status; }
             set { _status = value; }
         }
-        private int _locx;
+        protected int _locx;
         public int LocX
         {
             get { return _locx; }
