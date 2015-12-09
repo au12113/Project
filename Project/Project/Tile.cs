@@ -8,42 +8,22 @@ namespace Project
 {
     public class Tile
     {
-        //Not sure : private Location(x,y)
-        private int _btC;           //BoardTileColumn
-        public int btColumn
-        { get { return _btC; } }
-
-        private int _btR;           //BoardTileRow
-        public int btRow
-        { get { return _btR; } }
-
-        private int _item;          //Item & Trap
-        public int Item
+        public bool visible = false;
+        public int[] nextY = new int[3];
+        // Method
+        public Tile(int y0 = 99, int y1 = 99, int y2 = 99)
         {
-            get { return _item; }
-            set
-            {
-                if (value >= 0 && value < 3)
-                    _item = value;
-            }
+            nextY[0] = y0;
+            nextY[1] = y1;
+            nextY[2] = y2;
         }
-        private int _posPlayer;
-        public int PosPlayer
+        public bool Tvisible()
         {
-            get { return _posPlayer; }
-            set { _posPlayer = value; }
+            return visible;
         }
-        private List<Tile> nextTile = new List<Tile>();
-        //Method
-        public Tile(int c, int r, int item)
+        public void setVisible(bool b)
         {
-            _btC = c;
-            _btR = r;
-            _item = item;
-        }
-        public void addNextTile(Tile nt)
-        {
-            nextTile.Add(nt);
+            visible = b;
         }
     }
 }

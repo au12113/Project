@@ -17,15 +17,16 @@ namespace Project
                     /*case LEFT:
                         m.PerformLeft();
                         break;
+                    
                     case RIGHT:
                         m.PerformRight();
                         break;*/
                     case 0:
-                        m.PerformUp();
+                        m.Dice();
                         break;
-                    /*case DOWN:
+                    case 1:
                         m.PerformDown();
-                        break;*/
+                        break;
                 }
 
             }
