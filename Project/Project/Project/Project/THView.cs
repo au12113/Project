@@ -47,8 +47,8 @@ namespace Project
             UpdateTile(pictureBox4, board[2, 0]);
             UpdateTile(pictureBox5, board[3, 0]);
             UpdateTile(pictureBox6, board[2, 1]);
-            UpdateTile(pictureBox6, board[3, 1]);
-            Run.Enabled = ((THModel)model).btnRun_visible;
+            UpdateTile(pictureBox7, board[3, 1]);
+            Run.Enabled = ((THModel)model).btnRun_enable;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace Project
             controller.ActionPerformed(1);
         }
 
-        private void pictureBox5_Click_1(object sender, EventArgs e)
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
             pictureBox1.Location = pictureBox5.Location;
             pictureBox5.Enabled = false;
@@ -106,7 +106,7 @@ namespace Project
             controller.ActionPerformed(1);
         }
 
-        private void pictureBox7_Click_1(object sender, EventArgs e)
+        private void pictureBox7_Click(object sender, EventArgs e)
         {
             pictureBox1.Location = pictureBox7.Location;
             pictureBox5.Enabled = false;

@@ -8,12 +8,12 @@ namespace Project
 {
     class THModel : Model
     {
-        protected Tile[,] board = new Tile[4,3];
+        protected Tile[,] board = new Tile[7,3];
         protected Player player = new Player(0, 0);
         public int tmpX;
         public int tmpY;
-        public bool btnRun_visible = true;
-
+        public bool btnRun_enable = true;
+        Random rnd = new Random();
         public THModel () 
         {
             board[0, 0] = new Tile(0);
@@ -32,12 +32,12 @@ namespace Project
 
         public bool RunVisible()
         {
-            return btnRun_visible;
+            return btnRun_enable;
         }
 
         public void Dice()                          //ActionPerform : 0
         {
-            tmpX = player.posX + 1;
+            tmpX = player.posX + rnd.Next(1,2);
             for (int i = 0; i < 3; i++)
             {
                 tmpY = board[player.posX, player.posY].nextY[i];
@@ -46,13 +46,22 @@ namespace Project
                     board[tmpX, tmpY].setVisible(true);
                 }
             }
-            btnRun_visible = false;
+            btnRun_enable = false;
             NotifyAll();
         }
         public void Walk()
         {
-            player.setPPos(tmpX,tmpY);
-            board[tmpX, tmpY].setVisible(false);
+            for (int i = 0; i < 3; i++)
+            {
+                int tmp1Y = board[player.posX, player.posY].nextY[i];
+                if (tmp1Y != 99)
+                {
+                    board[tmpX, tmp1Y].setVisible(false);
+                }
+            }
+            player.setPPos(tmpX, tmpY);
+            btnRun_enable = true;
+            NotifyAll();
         }
         
     }
